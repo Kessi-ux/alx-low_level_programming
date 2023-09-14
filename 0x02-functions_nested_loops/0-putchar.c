@@ -16,5 +16,5 @@ int main(void)
 	{
 		_putchar(msg[a]);
 	}
-        return (0);
+	return (0);
 }
