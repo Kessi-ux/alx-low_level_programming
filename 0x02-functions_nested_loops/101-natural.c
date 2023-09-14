@@ -1,24 +1,16 @@
-
 #include <stdio.h>
 
 /**
- * main - prints to string
- * Description: Prints "and that piece of art is useful.." without puts
- * Return: 1
+ * main - prints the sum of all the natural numbers below 1024 that
+ * are divisible by 3 or 5
+ * Return: 0 if successful
  */
-
 int main(void)
 {
-char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-long l = 59;
-long fd = 1;
-long syscall = 1;
-long ret = 0;
-__asm__ ("syscall"
-: "=a" (ret)
-: "a" (syscall),
-"D" (fd),
-"S" (s),
-"d" (l));
-return (1);
+	int a, sum = 0;
+
+	for (a = 1; a < 1024; a++)
+		sum = ((a % 3 == 0) || (a % 5 == 0)) ? sum + a : sum;
+	printf("%d\n", sum);
+	return (0);
 }
